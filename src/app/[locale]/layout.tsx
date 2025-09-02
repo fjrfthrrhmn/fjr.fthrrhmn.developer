@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
-import { Inter } from "next/font/google"
+import { Fira_Mono, Roboto } from "next/font/google"
 import { notFound } from "next/navigation"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
@@ -10,13 +10,20 @@ import { APP_CONFIG } from "@/constants"
 
 import { Providers } from "@/providers"
 
-import { Footer } from "@/shared"
-
 import "./../globals.css"
 
-const interFont = Inter({
-	variable: "--font-inter",
-	subsets: ["latin"]
+const fontSans = Roboto({
+	variable: "--font-sans",
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["100", "200", "300", "500", "600", "700", "800", "900"]
+})
+
+const fontMono = Fira_Mono({
+	variable: "--font-mono",
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["400", "500", "700"]
 })
 
 export const metadata: Metadata = {
@@ -94,13 +101,12 @@ export default async function RootLayout({
 	return (
 		<html lang={locale} className="light" style={{ colorScheme: "light" }}>
 			<body
-				className={`${interFont.variable} antialiased flex flex-col min-h-screen w-full`}
+				className={`${fontMono.variable} ${fontSans.variable} antialiased flex flex-col min-h-screen w-full`}
 				suppressHydrationWarning
 			>
 				<NextIntlClientProvider locale={locale}>
 					<Providers>
 						<main className="flex-1">{children}</main>
-						<Footer />
 					</Providers>
 				</NextIntlClientProvider>
 			</body>

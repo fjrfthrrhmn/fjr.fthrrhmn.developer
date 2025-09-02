@@ -1,14 +1,20 @@
-import { Actions, Header, Stack, Title } from "@/widgets"
+import { HeroSection } from "@/components/features/home"
+import { DotPattern } from "@/ui"
+import { PhotosMarquee } from "@/widgets"
 
-export default function Home() {
+export default function HomePage() {
 	return (
-		<div className="container mx-auto px-4 py-8">
-			<div className="flex flex-col items-center justify-center gap-12">
-				<Header />
-				<Title />
-				<Stack />
-				<Actions />
+		<>
+			<div className="absolute top-0 left-0 w-full h-[400px]">
+				<DotPattern
+					width={12}
+					height={12}
+					className="[mask-image:radial-gradient(ellipse_at_top_left,white_10%,transparent_80%)]"
+				/>
 			</div>
-		</div>
+
+			<HeroSection />
+			<PhotosMarquee />
+		</>
 	)
 }

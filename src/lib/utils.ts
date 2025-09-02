@@ -3,12 +3,7 @@ import { format as dateFnsFormat, setDefaultOptions } from "date-fns"
 import { enUS, tr } from "date-fns/locale"
 import { twMerge } from "tailwind-merge"
 
-import {
-	APP_CONFIG,
-	CURRENCY_CONFIG,
-	DEFAULT_CURRENCY,
-	type CurrencyCode
-} from "@/constants"
+import { APP_CONFIG } from "@/constants"
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))
@@ -25,18 +20,4 @@ export const formatDate = (
 ) => {
 	setDefaultOptions({ locale: locale === "tr" ? tr : enUS })
 	return dateFnsFormat(date, format)
-}
-
-export const formatCurrency = (
-	amount: number,
-	currency: CurrencyCode = DEFAULT_CURRENCY
-) => {
-	const config = CURRENCY_CONFIG[currency]
-
-	return new Intl.NumberFormat(config.locale, {
-		style: "currency",
-		currency: currency,
-		minimumFractionDigits: config.minimumFractionDigits,
-		maximumFractionDigits: config.maximumFractionDigits
-	}).format(amount)
 }

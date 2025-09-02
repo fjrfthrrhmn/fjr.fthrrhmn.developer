@@ -3,6 +3,12 @@ export { Skeleton } from "./skeleton"
 export { Input } from "./input"
 export { Label } from "./label"
 export { Toaster } from "./sonner"
+export { Container, Section } from "./main"
+export { default as Typography } from "./typography"
+export { GradientText } from "./text-gradient"
+export { Marquee } from "./marquee"
+export { DotPattern } from "./dot-pattern"
+export { Spotlight } from "./spotlight"
 export {
 	Form,
 	FormField,
