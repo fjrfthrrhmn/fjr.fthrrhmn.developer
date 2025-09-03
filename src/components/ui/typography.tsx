@@ -91,25 +91,28 @@ const TitleStyles = cva(["leading-none text-pretty"], {
 	}
 })
 
-const TextStyles = cva(["leading-normal text-pretty text-paragraph"], {
-	variants: {
-		size: {
-			xl: "text-2xl",
-			lg: "text-xl",
-			md: "text-lg",
-			sm: "text-base",
-			xs: "text-sm"
-		},
-		weight: {
-			light: "font-light",
-			normal: "font-normal",
-			medium: "font-medium",
-			semibold: "font-semibold",
-			bold: "font-bold",
-			black: "font-black"
+const TextStyles = cva(
+	["leading-normal text-pretty text-paragraph font-body"],
+	{
+		variants: {
+			size: {
+				xl: "text-2xl",
+				lg: "text-xl",
+				md: "text-lg",
+				sm: "text-base",
+				xs: "text-sm"
+			},
+			weight: {
+				light: "font-light",
+				normal: "font-normal",
+				medium: "font-medium",
+				semibold: "font-semibold",
+				bold: "font-bold",
+				black: "font-black"
+			}
 		}
 	}
-})
+)
 
 Title.displayName = "Title"
 Text.displayName = "Text"

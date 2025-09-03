@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
-import { Fira_Mono, Roboto } from "next/font/google"
+import { Fira_Mono, Inter, Roboto } from "next/font/google"
 import { notFound } from "next/navigation"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
@@ -14,6 +14,13 @@ import "./../globals.css"
 
 const fontSans = Roboto({
 	variable: "--font-sans",
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["100", "200", "300", "500", "600", "700", "800", "900"]
+})
+
+const fontBody = Inter({
+	variable: "--font-body",
 	subsets: ["latin"],
 	display: "swap",
 	weight: ["100", "200", "300", "500", "600", "700", "800", "900"]
@@ -101,7 +108,7 @@ export default async function RootLayout({
 	return (
 		<html lang={locale} className="light" style={{ colorScheme: "light" }}>
 			<body
-				className={`${fontMono.variable} ${fontSans.variable} antialiased flex flex-col min-h-screen w-full`}
+				className={`${fontMono.variable} ${fontSans.variable} ${fontBody.variable} antialiased flex flex-col min-h-screen w-full`}
 				suppressHydrationWarning
 			>
 				<NextIntlClientProvider locale={locale}>
