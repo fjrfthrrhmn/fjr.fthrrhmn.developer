@@ -62,7 +62,7 @@
 			transform: translateX(calc(-100% - var(--gap)));
 		}
 	}
-	
+
 	@keyframes marquee-vertical {
 		from {
 			transform: translateY(0);
@@ -94,7 +94,6 @@
 			transform: translate(-50%, -40%) scale(1);
 		}
 	}
-
 
 	@keyframes spotlight {
 		0% {
@@ -191,7 +190,7 @@
 	}
 
 	body {
-		@apply bg-background text-foreground font-sans;
+		@apply bg-background font-sans text-foreground;
 	}
 
 	[role="button"],

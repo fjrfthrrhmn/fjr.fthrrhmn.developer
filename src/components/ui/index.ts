@@ -9,6 +9,7 @@ export { GradientText } from "./text-gradient"
 export { Marquee } from "./marquee"
 export { DotPattern } from "./dot-pattern"
 export { Spotlight } from "./spotlight"
+export { GlassIcon } from "./glass-icon"
 export { Title } from "./title"
 export {
 	Form,

@@ -12,11 +12,18 @@
 		"description": "Here’s a peek into my journey, skills, and experiences.",
 		"descriptionToast": "Oops! This feature isn’t available yet 🚧",
 		"buttonOne": "Ask AI About Me",
-		"aboutContent": {
+		"profileContent": {
 			"first": "Hey! I’m Fajar Fathurrahman Ramdhani. I'm a passionate 18-year-old Software Engineering student at Satu University, majoring in Informatics Engineering.",
 			"second": "I aspire to become a great Software Engineer who builds impactful solutions that can make a difference. My journey is fueled by curiosity and a constant drive to learn, explore, and push beyond the basics.",
 			"third": "I enjoy creating websites that not only look visually appealing but also deliver great functionality. Most of the things I build or learn are still driven by curiosity—even today.",
 			"fourth": "I’m always excited to talk about frontend development, user interface design, and open source. Let’s build something meaningful together!"
+		},
+		"experiencesContent": {
+			"title": "Experiences"
+		},
+		"skillsContent": {
+			"title": "Skills & Tools",
+			"description": "A collection of programming languages, frameworks, and tools I use frequently to design, build, and ship projects."
 		}
 	},
 
