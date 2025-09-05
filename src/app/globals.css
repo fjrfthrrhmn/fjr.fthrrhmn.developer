@@ -116,13 +116,16 @@
 
 	--color-color-2: var(--color-2);
 
-	--color-color-1: var(--color-1)
-;
-  @keyframes rainbow {
-  0% {
-    background-position: 0%;}
-  100% {
-    background-position: 200%;}}}
+	--color-color-1: var(--color-1);
+	@keyframes rainbow {
+		0% {
+			background-position: 0%;
+		}
+		100% {
+			background-position: 200%;
+		}
+	}
+}
 
 :root {
 	--radius: 1rem;
@@ -238,10 +241,10 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }

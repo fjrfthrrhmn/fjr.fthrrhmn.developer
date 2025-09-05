@@ -37,7 +37,9 @@ export const Title = ({
 }: TitleProps) => {
 	const classes = cn("", children && "md:col-span-2", className)
 
-	const Wrapper = withAnimation ? BoxReveal : React.Fragment
+	const Wrapper = withAnimation
+		? BoxReveal
+		: ({ children }: { children: React.ReactNode }) => <>{children}</>
 
 	const content = (
 		<>
@@ -54,7 +56,7 @@ export const Title = ({
 
 	if (children) {
 		return (
-			<div className="grid grid-cols-1 md:grid-cols-3 justify-end items-end gap-6">
+			<div className="grid grid-cols-1 md:grid-cols-3 justify-end items-end gap-6 overflow-x-hidden">
 				<div className={classes} {...props}>
 					{content}
 				</div>

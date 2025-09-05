@@ -24,7 +24,7 @@ const Hero = () => {
 
 	return (
 		<Section name="hero">
-			<Container className="min-h-[75dvh] grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:items-center">
+			<Container className="min-h-[80dvh] pt-24 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:items-center overflow-x-hidden">
 				<div className="w-full h-max lg:max-w-lg border flex flex-col gap-6 lg:col-span-2">
 					<motion.div
 						variants={ANIMATES.BLUR_FADE_ROTATE}

@@ -3,9 +3,7 @@
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 
-import { ANIMATES, TRANSITIONS } from "@/motion"
 import { ChevronDown, SatelliteIcon } from "lucide-react"
-import { motion } from "motion/react"
 import { toast } from "sonner"
 
 import {
@@ -27,8 +25,8 @@ const About = () => {
 	const t = useTranslations("AboutSection")
 
 	return (
-		<Section name="About">
-			<Container>
+		<Section name="about">
+			<Container className="overflow-x-hidden">
 				<Title
 					withAnimation
 					text={t("title")}
@@ -45,40 +43,13 @@ const About = () => {
 
 				<div className="mt-10 grid grid-cols-1 lg:grid-cols-7 gap-6">
 					{/* * Content Profile */}
-					<motion.div
-						variants={ANIMATES.BLUR_FADE_ROTATE}
-						transition={TRANSITIONS.SPRING_SMOOTH}
-						viewport={{ once: true, amount: 0.3 }}
-						initial="initial"
-						whileInView="animate"
-						className="lg:col-span-4"
-					>
-						<ProfileContent />
-					</motion.div>
+					<ProfileContent />
 
 					{/* * Content Experiences */}
-					<motion.div
-						variants={ANIMATES.BLUR_FADE_ROTATE}
-						transition={TRANSITIONS.SPRING_SMOOTH}
-						viewport={{ once: true, amount: 0.3 }}
-						initial="initial"
-						whileInView="animate"
-						className="lg:col-span-3"
-					>
-						<ExperiencesContent />
-					</motion.div>
+					<ExperiencesContent />
 
 					{/* * Content Skills and Tools */}
-					<motion.div
-						variants={ANIMATES.BLUR_FADE_ROTATE}
-						transition={TRANSITIONS.SPRING_SMOOTH}
-						viewport={{ once: true, amount: 0.3 }}
-						initial="initial"
-						whileInView="animate"
-						className="lg:col-span-7"
-					>
-						<SkillsContent />
-					</motion.div>
+					<SkillsContent />
 				</div>
 			</Container>
 		</Section>
@@ -94,11 +65,11 @@ export const ProfileContent = () => {
 	const itemsFilter = isExpanded ? items : items
 
 	return (
-		<CardStyle className="w-full h-full">
+		<CardStyle className="lg:col-span-4">
 			<div>
 				<Typography.Title variant="2/extrabold">Profile</Typography.Title>
 
-				<div className="grid gap-6 mt-10">
+				<div className="grid grid-cols-1 gap-y-6 mt-10">
 					{itemsFilter.map((item) => {
 						const key = `profileContent.${item}`
 
@@ -127,11 +98,11 @@ export const ExperiencesContent = () => {
 	const t = useTranslations("AboutSection.experiencesContent")
 
 	return (
-		<CardStyle className="w-full h-full">
+		<CardStyle className="lg:col-span-3">
 			<div>
 				<Title text={t("title")} />
 
-				<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6 mt-10">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-y-6 mt-10">
 					{/* TODO Use ScrollBar */}
 					{[...ExperiencesData].reverse().map((item) => {
 						const Icon = AboutUtils.getIconExperiences(item.category)
@@ -174,7 +145,7 @@ export const SkillsContent = () => {
 	const items = isExpanded ? SkillsData : SkillsData.slice(0, 15)
 
 	return (
-		<CardStyle className="w-full h-full">
+		<CardStyle className="lg:col-span-7">
 			<div>
 				<div className="max-w-xl">
 					<Title text={t("title")} description={t("description")} />

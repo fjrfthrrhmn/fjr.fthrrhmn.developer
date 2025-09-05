@@ -12,7 +12,7 @@ export { Spotlight } from "./spotlight"
 export { RainbowButton } from "./rainbow-button"
 export { GlassIcon } from "./glass-icon"
 export { BoxReveal } from "./box-reveal"
-export { NavHeader, NavMenuDesktop } from "./navbar"
+export { NavHeader, NavMenuDesktop, NavMenuMobile } from "./navbar"
 export { Title } from "./title"
 export {
 	Form,
