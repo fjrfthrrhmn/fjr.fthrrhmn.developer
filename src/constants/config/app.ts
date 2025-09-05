@@ -6,8 +6,8 @@ export const APP_CONFIG = {
 	API_TIMEOUT: 10000,
 	APP_NAME: "fjr.fthrrhmn.dev",
 	APP_VERSION: "1.0.0",
-	DEFAULT_LANGUAGE: "tr",
-	DEFAULT_THEME: "light",
+	DEFAULT_LANGUAGE: "en",
+	DEFAULT_THEME: "dark",
 	SITE_URL: process.env.NEXT_PUBLIC_APP_URL || "",
 	APP_DESCRIPTION:
 		"Modern Next.js 15 boilerplate with TypeScript & Tailwind CSS",

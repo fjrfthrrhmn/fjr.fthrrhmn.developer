@@ -1,39 +1,29 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import Image from "next/image"
 import Link from "next/link"
 
+import { ANIMATES, TRANSITIONS } from "@/motion"
 import { Spin as Hamburger } from "hamburger-react"
 import { BotIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { toast } from "sonner"
 
-import { Avatar, RainbowButton, Typography } from "@/ui"
+import { RainbowButton, Typography } from "@/ui"
 
 import { NavItemsData } from "@/data"
 
-const NavHeader = ({ onClick }: { onClick: () => void }) => {
-	const image =
-		"https://i.pinimg.com/1200x/f7/7a/35/f77a35a04feb7ed10d5bd51b5922657c.jpg"
-
+const NavHeader = ({
+	onClick,
+	isOpen
+}: {
+	onClick: () => void
+	isOpen: boolean
+}) => {
 	return (
 		<>
-			<motion.div>
-				<Avatar className="size-12 border-4">
-					<Image
-						src={image}
-						alt="profile"
-						width={48}
-						height={48}
-						className="object-cover w-full h-full"
-						unoptimized
-					/>
-				</Avatar>
-			</motion.div>
-
 			<div className="block lg:hidden bg-foreground shadow-2xl rounded-full">
-				<Hamburger color="black" onToggle={onClick} size={18} />
+				<Hamburger color="black" toggle={onClick} toggled={isOpen} size={18} />
 			</div>
 		</>
 	)
@@ -44,9 +34,17 @@ const NavMenuDesktop = () => {
 
 	return (
 		<div className="hidden lg:flex gap-4 items-center">
-			<div className="border px-6 rounded-2xl py-2 flex items-center gap-6 bg-zinc-800/40 shadow-2xl backdrop-blur w-max">
+			<div className="border px-6 rounded-2xl py-2.5 flex items-center gap-6 bg-zinc-800/60 shadow-2xl backdrop-blur w-max">
 				{NavItemsData.map((item) => {
-					return <div key={item.name}>{item.name}</div>
+					return (
+						<div key={item.name}>
+							<Link href={item.href}>
+								<Typography.Text variant="xs/bold" className="text-foreground">
+									{item.name}
+								</Typography.Text>
+							</Link>
+						</div>
+					)
 				})}
 			</div>
 
@@ -64,12 +62,19 @@ const NavMenuMobile = () => {
 	return (
 		<div className="relative z-40 w-full sm:max-w-sm mx-auto h-full flex flex-col justify-center px-6">
 			<div className="flex flex-col justify-center gap-6 mb-10">
-				{NavItemsData.map((item) => {
+				{NavItemsData.map((item, index) => {
 					return (
-						<motion.div key={item.name}>
+						<motion.div
+							key={item.name}
+							variants={ANIMATES.BLUR_FADE_ROTATE}
+							transition={{ ...TRANSITIONS.SPRING_SMOOTH, delay: 0.2 * index }}
+							initial="initial"
+							animate="animate"
+							exit="exit"
+						>
 							<Link href={item.href}>
 								<Typography.Title
-									variant="3/extrabold"
+									variant="3/bold"
 									className="flex items-center gap-4 text-center"
 								>
 									<item.icon size={32} />

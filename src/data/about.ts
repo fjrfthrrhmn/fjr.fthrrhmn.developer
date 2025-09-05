@@ -1,6 +1,7 @@
 type ExperienceType = {
 	title: string
 	company?: string
+	url?: string
 	period: string
 	description: string
 	category: "work" | "academic" | "competition"
@@ -10,6 +11,7 @@ export const ExperiencesData: ExperienceType[] = [
 	{
 		title: "Fullstack Developer",
 		company: "PKL CyberLabs",
+		url: "https://cyberlabs.co.id/",
 		period: "Sep – Dec 2024",
 		description:
 			"Built and maintained fullstack web apps (frontend + backend).",
@@ -17,7 +19,8 @@ export const ExperiencesData: ExperienceType[] = [
 	},
 	{
 		title: "Fullstack Developer",
-		company: "Intern PT. Fath Synergy Group",
+		company: "Intern Fath Synergy Group",
+		url: "https://fathforce.com/",
 		period: "Jan – Mar 2025",
 		description: "Developed scalable web solutions and improved UI/UX.",
 		category: "work"

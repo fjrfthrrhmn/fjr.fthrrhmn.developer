@@ -7,6 +7,7 @@ import Link from "next/link"
 import { ANIMATES, TRANSITIONS } from "@/motion"
 import { LucideArrowRight, LucideSend } from "lucide-react"
 import { motion } from "motion/react"
+import { toast } from "sonner"
 
 import {
 	Button,
@@ -33,9 +34,11 @@ const Hero = () => {
 						animate="animate"
 						exit="exit"
 					>
-						<Typography.Title variant="1/black">{t("title")}</Typography.Title>
+						<Typography.Title variant="1/black" className="text-4xl">
+							{t("title")}
+						</Typography.Title>
 						<GradientText>
-							<Typography.Title variant="1/black">
+							<Typography.Title className="text-5xl" variant="1/black">
 								{t("highlight")}.
 							</Typography.Title>
 						</GradientText>
@@ -56,18 +59,34 @@ const Hero = () => {
 						initial="initial"
 						animate="animate"
 						exit="exit"
-						className="flex flex-wrap flex-col md:flex-row gap-4"
+						className="flex flex-wrap flex-col md:flex-row gap-6"
 					>
-						<Button size="lg">
-							<LucideSend strokeWidth={2.5} />
-							{t("buttonOne")}
-						</Button>
-						<Button asChild size="lg" variant={"secondary"}>
-							<Link href={"#about"}>
-								{t("buttonTwo")}
-								<LucideArrowRight strokeWidth={2.5} />
-							</Link>
-						</Button>
+						<motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }}>
+							<Button
+								className="group"
+								size="lg"
+								onClick={() =>
+									toast.info("Sorry, this feature is not available yet.")
+								}
+							>
+								<LucideSend
+									className="group-hover:-rotate-12 transition-all duration-200"
+									strokeWidth={2.5}
+								/>
+								{t("buttonOne")}
+							</Button>
+						</motion.div>
+						<motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }}>
+							<Button asChild size="lg" variant={"secondary"} className="group">
+								<Link href={"#about"}>
+									{t("buttonTwo")}
+									<LucideArrowRight
+										className="group-hover:-rotate-12 transition-all duration-200"
+										strokeWidth={2.5}
+									/>
+								</Link>
+							</Button>
+						</motion.div>
 					</motion.div>
 				</div>
 
@@ -77,7 +96,7 @@ const Hero = () => {
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					className="order-first lg:order-last w-full h-max border flex lg:justify-end"
+					className="order-first lg:order-last w-full h-max flex lg:justify-end"
 				>
 					<Image
 						src={image}
@@ -85,7 +104,7 @@ const Hero = () => {
 						width={400}
 						height={400}
 						quality={100}
-						className="rounded-full border-8 shadow-2xl object-cover aspect-square size-24 sm:size-28 lg:size-72"
+						className="rounded-full border-8 shadow-2xl object-cover aspect-square size-24 sm:size-32 lg:size-auto"
 						priority
 						unoptimized
 					/>

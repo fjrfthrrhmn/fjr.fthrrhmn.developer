@@ -25,7 +25,7 @@ const Container = ({ ...props }: ContainerProps): React.ReactNode => {
 	const { children, container = true, className } = props
 	const classes = cn(
 		"relative z-10",
-		container && "container mx-auto px-4 py-6 lg:px-12 border",
+		container && "container mx-auto px-4 py-6 sm:px-12 border",
 		className
 	)
 

@@ -34,7 +34,7 @@ export const PhotosData = [
 export function PhotosMarquee() {
 	return (
 		<Section name="photos">
-			<Marquee className="[--gap:2rem] [--duration:40s] overflow-clip py-6">
+			<Marquee className="[--gap:2rem] [--duration:30s] overflow-clip py-6">
 				{PhotosData.map((item, index) => {
 					const rotateClass = [
 						"rotate-0",
