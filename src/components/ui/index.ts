@@ -9,8 +9,10 @@ export { GradientText } from "./text-gradient"
 export { Marquee } from "./marquee"
 export { DotPattern } from "./dot-pattern"
 export { Spotlight } from "./spotlight"
+export { RainbowButton } from "./rainbow-button"
 export { GlassIcon } from "./glass-icon"
 export { BoxReveal } from "./box-reveal"
+export { NavHeader, NavMenuDesktop } from "./navbar"
 export { Title } from "./title"
 export {
 	Form,

@@ -4,11 +4,19 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 
 import { ANIMATES, TRANSITIONS } from "@/motion"
-import { BotIcon, ChevronDown } from "lucide-react"
+import { ChevronDown, SatelliteIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { toast } from "sonner"
 
-import { Button, Container, GlassIcon, Section, Title, Typography } from "@/ui"
+import {
+	Button,
+	Container,
+	GlassIcon,
+	RainbowButton,
+	Section,
+	Title,
+	Typography
+} from "@/ui"
 import { CardStyle } from "@/widgets"
 
 import { ExperiencesData, SkillsData } from "@/data"
@@ -27,10 +35,12 @@ const About = () => {
 					variant={"1/extrabold"}
 					description={t("description")}
 				>
-					<Button onClick={() => toast.info(t("descriptionToast"))}>
-						<BotIcon />
-						{t("buttonOne")}
-					</Button>
+					<div className="flex flex-col justify-end">
+						<RainbowButton onClick={() => toast.info(t("descriptionToast"))}>
+							<SatelliteIcon />
+							Live Updates
+						</RainbowButton>
+					</div>
 				</Title>
 
 				<div className="mt-10 grid grid-cols-1 lg:grid-cols-7 gap-6">

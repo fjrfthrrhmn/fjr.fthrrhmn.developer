@@ -1,25 +1,25 @@
-import { Transition } from "motion"
+import { Transition } from "motion/react"
 
-const SPRING_SMOOTH: Transition = {
+const SPRING_SMOOTH = {
 	type: "spring",
 	stiffness: 70,
 	damping: 10
 } satisfies Transition
 
-const SPRING_BOUNCY: Transition = {
+const SPRING_BOUNCY = {
 	type: "spring",
 	stiffness: 200,
 	damping: 12
 } satisfies Transition
 
-const SPRING_HEAVY: Transition = {
+const SPRING_HEAVY = {
 	type: "spring",
 	stiffness: 300,
 	damping: 30,
 	mass: 2
 } satisfies Transition
 
-const TWEEN_EASE: Transition = {
+const TWEEN_EASE = {
 	type: "tween",
 	ease: "easeInOut",
 	duration: 0.4
