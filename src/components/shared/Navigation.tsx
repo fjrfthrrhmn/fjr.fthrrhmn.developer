@@ -10,7 +10,7 @@ export const Navigation = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
-		<div className="fixed top-0 left-0 right-0 z-40 w-full h-full py-6">
+		<div className="fixed top-0 left-0 right-0 z-40 w-full h-max py-6">
 			<div className="relative z-50 flex justify-between items-center gap-4 container px-4 mx-auto">
 				<NavHeader onClick={() => setIsOpen(!isOpen)} />
 				<NavMenuDesktop />
