@@ -108,7 +108,7 @@ export default async function RootLayout({
 	}
 
 	return (
-		<html lang={locale} className="light" style={{ colorScheme: "light" }}>
+		<html lang={locale} className="dark" style={{ colorScheme: "light" }}>
 			<body
 				className={`${fontMono.variable} ${fontSans.variable} ${fontBody.variable} antialiased flex flex-col min-h-screen w-full`}
 				suppressHydrationWarning

@@ -5,40 +5,13 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Spin as Hamburger } from "hamburger-react"
-import {
-	AwardIcon,
-	Bot,
-	BriefcaseIcon,
-	MessageCircleMoreIcon,
-	UserIcon
-} from "lucide-react"
+import { BotIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { toast } from "sonner"
 
 import { Avatar, RainbowButton, Typography } from "@/ui"
 
-const NAV_ITEMS = [
-	{
-		name: "About",
-		href: "#about",
-		icon: UserIcon
-	},
-	{
-		name: "Certifications",
-		href: "#certifications",
-		icon: AwardIcon
-	},
-	{
-		name: "Projects",
-		href: "#projects",
-		icon: BriefcaseIcon
-	},
-	{
-		name: "Contact",
-		href: "#contact",
-		icon: MessageCircleMoreIcon
-	}
-]
+import { NavItemsData } from "@/data"
 
 const NavHeader = ({ onClick }: { onClick: () => void }) => {
 	const image =
@@ -72,14 +45,14 @@ const NavMenuDesktop = () => {
 	return (
 		<div className="hidden lg:flex gap-4 items-center">
 			<div className="border px-6 rounded-2xl py-2 flex items-center gap-6 bg-zinc-800/40 shadow-2xl backdrop-blur w-max">
-				{NAV_ITEMS.map((item) => {
+				{NavItemsData.map((item) => {
 					return <div key={item.name}>{item.name}</div>
 				})}
 			</div>
 
 			<RainbowButton onClick={() => toast.info(t("descriptionToast"))}>
-				<Bot />
-				{t("buttonOne")}
+				<BotIcon />
+				Ask AI About Me
 			</RainbowButton>
 		</div>
 	)
@@ -91,7 +64,7 @@ const NavMenuMobile = () => {
 	return (
 		<div className="relative z-40 w-full sm:max-w-sm mx-auto h-full flex flex-col justify-center px-6">
 			<div className="flex flex-col justify-center gap-6 mb-10">
-				{NAV_ITEMS.map((item) => {
+				{NavItemsData.map((item) => {
 					return (
 						<motion.div key={item.name}>
 							<Link href={item.href}>
@@ -112,7 +85,7 @@ const NavMenuMobile = () => {
 				className="w-full"
 				onClick={() => toast.info(t("descriptionToast"))}
 			>
-				<Bot />
+				<BotIcon />
 				{t("buttonOne")}
 			</RainbowButton>
 		</div>

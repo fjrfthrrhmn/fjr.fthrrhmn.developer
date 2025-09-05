@@ -4,7 +4,7 @@ export const APP_CONFIG = {
 	GA_ID: process.env.NEXT_PUBLIC_GA_ID,
 	SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
 	API_TIMEOUT: 10000,
-	APP_NAME: "NextJS Boilerplate",
+	APP_NAME: "fjr.fthrrhmn.dev",
 	APP_VERSION: "1.0.0",
 	DEFAULT_LANGUAGE: "tr",
 	DEFAULT_THEME: "light",
