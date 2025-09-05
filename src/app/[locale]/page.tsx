@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/features/home"
+import { AboutSection, HeroSection } from "@/components/features/home"
 import { DotPattern } from "@/ui"
 import { PhotosMarquee } from "@/widgets"
 
@@ -15,7 +15,7 @@ export default function HomePage() {
 
 			<HeroSection />
 			<PhotosMarquee />
-			{/* <AboutSection /> */}
+			<AboutSection />
 		</main>
 	)
 }

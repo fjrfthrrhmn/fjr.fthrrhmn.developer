@@ -16,7 +16,7 @@ export const Navigation = () => {
 				<NavMenuDesktop />
 			</div>
 
-			<AnimatePresence mode="wait">
+			<AnimatePresence>
 				{isOpen && (
 					<div className="block lg:hidden fixed inset-0 z-30 ">
 						{/* Backdrop */}
@@ -29,7 +29,7 @@ export const Navigation = () => {
 							transition={{
 								type: "tween",
 								ease: "easeOut",
-								duration: 0.25
+								duration: 0.5
 							}}
 						/>
 

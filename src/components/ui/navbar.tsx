@@ -86,13 +86,21 @@ const NavMenuMobile = () => {
 				})}
 			</div>
 
-			<RainbowButton
-				className="w-full"
-				onClick={() => toast.info(t("descriptionToast"))}
+			<motion.div
+				variants={ANIMATES.BLUR_FADE_ROTATE}
+				transition={{ ...TRANSITIONS.SPRING_SMOOTH }}
+				initial="initial"
+				animate="animate"
+				exit="exit"
 			>
-				<BotIcon />
-				{t("buttonOne")}
-			</RainbowButton>
+				<RainbowButton
+					className="w-full"
+					onClick={() => toast.info(t("descriptionToast"))}
+				>
+					<BotIcon />
+					{t("buttonOne")}
+				</RainbowButton>
+			</motion.div>
 		</div>
 	)
 }

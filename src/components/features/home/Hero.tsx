@@ -63,7 +63,7 @@ const Hero = () => {
 					>
 						<motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }}>
 							<Button
-								className="group"
+								className="group w-full"
 								size="lg"
 								onClick={() =>
 									toast.info("Sorry, this feature is not available yet.")
@@ -77,7 +77,12 @@ const Hero = () => {
 							</Button>
 						</motion.div>
 						<motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }}>
-							<Button asChild size="lg" variant={"secondary"} className="group">
+							<Button
+								asChild
+								size="lg"
+								variant={"secondary"}
+								className="group w-full"
+							>
 								<Link href={"#about"}>
 									{t("buttonTwo")}
 									<LucideArrowRight

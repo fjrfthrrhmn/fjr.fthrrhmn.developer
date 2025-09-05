@@ -52,7 +52,7 @@ export const SkillsData: SkillType[] = [
 		background: "bg-blue-600"
 	},
 	{
-		name: "Tailwind CSS",
+		name: "Tailwind",
 		icon: IconTailwindCss,
 		background: "bg-sky-400"
 	},
