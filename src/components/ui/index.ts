@@ -10,6 +10,7 @@ export { Marquee } from "./marquee"
 export { DotPattern } from "./dot-pattern"
 export { Spotlight } from "./spotlight"
 export { GlassIcon } from "./glass-icon"
+export { BoxReveal } from "./box-reveal"
 export { Title } from "./title"
 export {
 	Form,

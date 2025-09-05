@@ -4,6 +4,7 @@ import React from "react"
 
 import { cn } from "@/lib/utils"
 
+import { BoxReveal } from "./box-reveal"
 import Typography from "./typography"
 
 type TitleVariant =
@@ -22,6 +23,7 @@ type TitleProps = {
 	description?: string
 	variant?: TitleVariant
 	as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" // semantic control
+	withAnimation?: boolean
 } & React.ComponentProps<"div">
 
 export const Title = ({
@@ -30,17 +32,22 @@ export const Title = ({
 	variant = "3/extrabold",
 	children,
 	className,
+	withAnimation = false,
 	...props
 }: TitleProps) => {
 	const classes = cn("", children && "md:col-span-2", className)
 
+	const Wrapper = withAnimation ? BoxReveal : React.Fragment
+
 	const content = (
 		<>
-			<Typography.Title variant={variant}>{text}</Typography.Title>
+			<Wrapper>
+				<Typography.Title variant={variant}>{text}</Typography.Title>
+			</Wrapper>
 			{description && (
-				<div className="mt-4 max-w-xl">
+				<Wrapper className="mt-4 max-w-xl">
 					<Typography.Text>{description}</Typography.Text>
-				</div>
+				</Wrapper>
 			)}
 		</>
 	)

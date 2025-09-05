@@ -206,6 +206,6 @@
 	}
 
 	::selection {
-		@apply bg-teal-400 text-background;
+		@apply bg-teal-300 text-background;
 	}
 }

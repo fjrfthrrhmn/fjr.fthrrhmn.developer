@@ -3,14 +3,15 @@
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 
+import { ANIMATES, TRANSITIONS } from "@/motion"
 import { BotIcon, ChevronDown } from "lucide-react"
+import { motion } from "motion/react"
 import { toast } from "sonner"
 
 import { Button, Container, GlassIcon, Section, Title, Typography } from "@/ui"
 import { CardStyle } from "@/widgets"
 
-import { ExperiencesData } from "@/data/about"
-import { SkillsData } from "@/data/skills"
+import { ExperiencesData, SkillsData } from "@/data"
 
 import { AboutUtils } from "./utils"
 
@@ -21,6 +22,7 @@ const About = () => {
 		<Section name="About">
 			<Container>
 				<Title
+					withAnimation
 					text={t("title")}
 					variant={"1/extrabold"}
 					description={t("description")}
@@ -33,13 +35,40 @@ const About = () => {
 
 				<div className="mt-10 grid grid-cols-1 lg:grid-cols-7 gap-6">
 					{/* * Content Profile */}
-					<ProfileContent />
+					<motion.div
+						variants={ANIMATES.BLUR_FADE_ROTATE}
+						transition={TRANSITIONS.SPRING_SMOOTH}
+						viewport={{ once: true, amount: 0.3 }}
+						initial="initial"
+						whileInView="animate"
+						className="lg:col-span-4"
+					>
+						<ProfileContent />
+					</motion.div>
 
 					{/* * Content Experiences */}
-					<ExperiencesContent />
+					<motion.div
+						variants={ANIMATES.BLUR_FADE_ROTATE}
+						transition={TRANSITIONS.SPRING_SMOOTH}
+						viewport={{ once: true, amount: 0.3 }}
+						initial="initial"
+						whileInView="animate"
+						className="lg:col-span-3"
+					>
+						<ExperiencesContent />
+					</motion.div>
 
 					{/* * Content Skills and Tools */}
-					<SkillsContent />
+					<motion.div
+						variants={ANIMATES.BLUR_FADE_ROTATE}
+						transition={TRANSITIONS.SPRING_SMOOTH}
+						viewport={{ once: true, amount: 0.3 }}
+						initial="initial"
+						whileInView="animate"
+						className="lg:col-span-7"
+					>
+						<SkillsContent />
+					</motion.div>
 				</div>
 			</Container>
 		</Section>
@@ -52,10 +81,10 @@ export const ProfileContent = () => {
 	const t = useTranslations("AboutSection")
 	const [isExpanded, setIsExpanded] = useState(false)
 	const items = ["first", "second", "third", "fourth"]
-	const itemsFilter = isExpanded ? items : items.slice(0, 2)
+	const itemsFilter = isExpanded ? items : items
 
 	return (
-		<CardStyle className="lg:col-span-4">
+		<CardStyle className="w-full h-full">
 			<div>
 				<Typography.Title variant="2/extrabold">Profile</Typography.Title>
 
@@ -88,7 +117,7 @@ export const ExperiencesContent = () => {
 	const t = useTranslations("AboutSection.experiencesContent")
 
 	return (
-		<CardStyle className="lg:col-span-3">
+		<CardStyle className="w-full h-full">
 			<div>
 				<Title text={t("title")} />
 
@@ -100,7 +129,7 @@ export const ExperiencesContent = () => {
 
 						return (
 							<div
-								key={item.title}
+								key={item.company}
 								className="flex flex-col lg:flex-row lg:items-center gap-4"
 							>
 								<div
@@ -132,17 +161,19 @@ export const ExperiencesContent = () => {
 export const SkillsContent = () => {
 	const t = useTranslations("AboutSection.skillsContent")
 	const [isExpanded, setIsExpanded] = useState(false)
-	const items = isExpanded ? SkillsData : SkillsData.slice(0, 16)
+	const items = isExpanded ? SkillsData : SkillsData.slice(0, 15)
 
 	return (
-		<CardStyle className="lg:col-span-7">
+		<CardStyle className="w-full h-full">
 			<div>
-				<Title text={t("title")} description={t("description")} />
+				<div className="max-w-xl">
+					<Title text={t("title")} description={t("description")} />
+				</div>
 
 				<div className="relative z-20 flex gap-12 flex-wrap my-10">
-					{items.map((item) => {
-						return <GlassIcon key={item.name} {...item} />
-					})}
+					{items.map((item) => (
+						<GlassIcon key={item.name} {...item} />
+					))}
 				</div>
 
 				<div>
