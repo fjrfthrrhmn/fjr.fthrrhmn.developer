@@ -16,7 +16,7 @@ export const Stats = ({ stats }: StatsProps) => {
 	}
 
 	return (
-		<div className="lg:col-span-5 grid grid-cols-2 gap-6">
+		<div className="lg:col-span-5 grid sm:grid-cols-2 gap-6">
 			{GITHUB_STATS_MAP(stats)?.map((stat, index) => (
 				<CardStyle key={index}>
 					<div className=" relative z-20 flex p-4 flex-col items-center justify-center text-center gap-2">

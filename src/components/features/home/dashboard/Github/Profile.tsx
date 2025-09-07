@@ -42,7 +42,7 @@ export const Profile = ({ profile }: ProfileProps) => {
 					<div className="flex gap-2 items-center">
 						<Link href={url} target="_blank" rel="noopener noreferrer">
 							<Typography.Title
-								variant="4/normal"
+								variant="5/normal"
 								className={`capitalize decoration-2 underline underline-offset-8 ${COLOR.UNDERLINE}`}
 							>
 								{name}
