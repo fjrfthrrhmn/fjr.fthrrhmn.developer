@@ -19,7 +19,7 @@ type CardStyleProps = {
 export const CardStyle = ({ ...props }: CardStyleProps): React.ReactNode => {
 	const { children, className } = props
 	const containerClasses = cn(
-		"relative overflow-hidden p-6 rounded-3xl border-2 bg-zinc-800",
+		"relative overflow-hidden p-6 rounded-3xl border-2 border-zinc-700 bg-zinc-800",
 		className
 	)
 
