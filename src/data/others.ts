@@ -1,8 +1,11 @@
 import {
 	AwardIcon,
 	BriefcaseIcon,
+	GithubIcon,
 	MessageCircleMoreIcon,
-	UserIcon
+	TimerIcon,
+	UserIcon,
+	ZapIcon
 } from "lucide-react"
 
 export const NavItemsData = [
@@ -26,4 +29,22 @@ export const NavItemsData = [
 		href: "#contact",
 		icon: MessageCircleMoreIcon
 	}
-]
+] as const
+
+export const ToggleItemsData = [
+	{
+		name: "Github",
+		icon: GithubIcon,
+		disabled: false
+	},
+	{
+		name: "MonkeyType",
+		icon: ZapIcon,
+		disabled: true
+	},
+	{
+		name: "WakaTime",
+		icon: TimerIcon,
+		disabled: true
+	}
+] as const

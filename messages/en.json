@@ -28,6 +28,11 @@
 		}
 	},
 
+	"DashboardSection": {
+		"title": "Statistics",
+		"description": "Check out my coding activity, contributions, and learning progress across different platforms."
+	},
+
 	"CTA": {
 		"title": "Let’s get",
 		"highlight": "in touch",

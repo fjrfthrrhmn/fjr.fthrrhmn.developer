@@ -14,7 +14,9 @@ export { GlassIcon } from "./glass-icon"
 export { BoxReveal } from "./box-reveal"
 export { ScrollArea, ScrollBar } from "./scroll-area"
 export { NavHeader, NavMenuDesktop, NavMenuMobile } from "./navbar"
+export * from "./dropdown-menu"
 export { Title } from "./title"
+export { NumberTicker } from "./number-ticker"
 export {
 	Form,
 	FormField,

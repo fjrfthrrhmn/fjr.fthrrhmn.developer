@@ -2,11 +2,8 @@ import { IconType } from "react-icons"
 import { useTranslations } from "next-intl"
 import Link from "next/link"
 
-import { ANIMATES, TRANSITIONS } from "@/motion"
-import { motion } from "motion/react"
-
-import { ScrollArea, Title, Typography } from "@/components/ui"
-import { CardStyle } from "@/components/widgets"
+import { ScrollArea, Title, Typography } from "@/ui"
+import { CardStyle } from "@/widgets"
 
 import { ExperiencesData, ExperienceType } from "@/data"
 
@@ -28,9 +25,8 @@ export const ExperiencesContent = () => {
 
 							return (
 								<ExperienceItem
-									key={item.company}
+									key={index}
 									{...item}
-									index={index}
 									color={color}
 									icon={Icon}
 								/>
@@ -46,28 +42,19 @@ export const ExperiencesContent = () => {
 type ExperienceItemProps = {
 	icon: IconType
 	color: string
-	index: number
 } & ExperienceType
 
 const ExperienceItem = ({ ...props }: ExperienceItemProps) => {
-	const { color, icon: Icon, period, title, company, url, index } = props
+	const { color, icon: Icon, period, title, company, url } = props
 
 	const LinkComponent = url ? Link : "div"
 
 	return (
-		<motion.div
-			className="flex flex-col lg:flex-row lg:items-center gap-4"
-			variants={ANIMATES.BLUR_FADE_ROTATE}
-			transition={{ ...TRANSITIONS.SPRING_SMOOTH, delay: 0.2 * index }}
-			viewport={{ once: true, amount: 0.3 }}
-			initial="initial"
-			whileInView="animate"
-			exit="exit"
-		>
+		<div className="flex flex-col lg:flex-row lg:items-center gap-4">
 			<div
 				className={`flex justify-center items-center ${color} rounded-full p-2.5 w-max h-max`}
 			>
-				{Icon && <Icon size={32} />}
+				{Icon && <Icon size={28} />}
 			</div>
 
 			<div className="flex flex-col gap-1">
@@ -87,6 +74,6 @@ const ExperienceItem = ({ ...props }: ExperienceItemProps) => {
 				</LinkComponent>
 				<Typography.Text variant="xs/normal">{title}</Typography.Text>
 			</div>
-		</motion.div>
+		</div>
 	)
 }

@@ -1,0 +1,5 @@
+export { Calendar as CalendarContent } from "./Calendar"
+export { Profile as ProfileContent } from "./Profile"
+export { Github as GithubContent } from "./Github"
+export { Stats as StatsContent } from "./Stats"
+export { Streak as StreakContent } from "./Streak"
