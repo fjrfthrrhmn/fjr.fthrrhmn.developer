@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
-import { Fira_Mono, Inter, Roboto } from "next/font/google"
+import { Inter, JetBrains_Mono, Roboto } from "next/font/google"
 import { notFound } from "next/navigation"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
@@ -28,7 +28,7 @@ const fontBody = Inter({
 	weight: ["100", "200", "300", "500", "600", "700", "800", "900"]
 })
 
-const fontMono = Fira_Mono({
+const fontMono = JetBrains_Mono({
 	variable: "--font-mono",
 	subsets: ["latin"],
 	display: "swap",

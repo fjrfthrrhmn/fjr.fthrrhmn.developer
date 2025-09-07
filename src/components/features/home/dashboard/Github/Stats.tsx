@@ -10,6 +10,11 @@ type StatsProps = {
 }
 
 export const Stats = ({ stats }: StatsProps) => {
+	const COLOR = {
+		TEXT: "text-[#34d399]",
+		UNDERLINE: "decoration-[#34d399]"
+	}
+
 	return (
 		<div className="lg:col-span-5 grid grid-cols-2 gap-6">
 			{GITHUB_STATS_MAP(stats)?.map((stat, index) => (
@@ -18,7 +23,7 @@ export const Stats = ({ stats }: StatsProps) => {
 						<Typography.Title variant="2/black">
 							<NumberTicker
 								value={stat.value}
-								// className={`font-mono ${COLOR.TEXT}`}
+								className={`font-mono ${COLOR.TEXT}`}
 							/>
 						</Typography.Title>
 						<Typography.Text variant="sm/normal" className="text-foreground">

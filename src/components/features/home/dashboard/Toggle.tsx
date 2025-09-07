@@ -9,7 +9,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
-	DropdownMenuTrigger
+	DropdownMenuTrigger,
+	RainbowButton
 } from "@/ui"
 
 import { ToggleItemsData } from "@/data"
@@ -24,10 +25,10 @@ export const Toggle = () => {
 	return (
 		<DropdownMenu>
 			<div className="flex justify-end gap-4">
-				<Button className="gap-2 flex-1 lg:w-max">
+				<RainbowButton className="gap-2 w-full lg:max-w-[200px]">
 					{activeItem?.icon && <activeItem.icon size={18} />}
 					{active}
-				</Button>
+				</RainbowButton>
 
 				<DropdownMenuTrigger asChild>
 					<Button size={"icon"} variant={"secondary"}>

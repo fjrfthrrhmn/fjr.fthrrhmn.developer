@@ -21,8 +21,11 @@ const About = () => {
 					variant={"1/extrabold"}
 					description={t("description")}
 				>
-					<div className="flex flex-col justify-end">
-						<RainbowButton onClick={() => toast.info(t("descriptionToast"))}>
+					<div className="flex justify-end items-end">
+						<RainbowButton
+							onClick={() => toast.info(t("descriptionToast"))}
+							className="w-full lg:max-w-[200px]"
+						>
 							<SatelliteIcon />
 							Live Updates
 						</RainbowButton>

@@ -56,7 +56,7 @@ export const Title = ({
 
 	if (children) {
 		return (
-			<div className="grid grid-cols-1 md:grid-cols-3 justify-end items-end gap-6 overflow-x-hidden">
+			<div className="grid grid-cols-1 md:grid-cols-3 justify-end items-end gap-6 overflow-hidden">
 				<div className={classes} {...props}>
 					{content}
 				</div>
