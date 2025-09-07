@@ -8,6 +8,7 @@ import { useGithubProfile } from "@/hooks"
 
 import { Typography } from "@/components/ui"
 import { CardStyle } from "@/widgets"
+import { DashboardSkeleton } from "@/skeletons"
 
 import { CalendarContent, ProfileContent, StatsContent } from "."
 
@@ -16,7 +17,7 @@ export const Github = () => {
 		useGithubProfile()
 
 	if (isLoading || !data || !contributions || isPending || isFetching)
-		return null
+		return <DashboardSkeleton />
 
 	return (
 		<>
