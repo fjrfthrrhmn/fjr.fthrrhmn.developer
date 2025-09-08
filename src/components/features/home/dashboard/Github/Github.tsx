@@ -33,7 +33,7 @@ export const Github = () => {
 			<StatsContent stats={contributions} />
 			<CalendarContent calendar={contributions.contributionCalendar} />
 
-			<CardStyle className="bg-foreground text-background hidden lg:flex lg:col-span-2 items-center justify-center gap-4 text-center flex-col w-full h-full border">
+			<CardStyle className="w-full min-h-44 max-h-60 bg-foreground text-background hidden lg:flex lg:col-span-2 items-center justify-center gap-4 text-center flex-col border">
 				<Link
 					href={data.url}
 					target="_blank"

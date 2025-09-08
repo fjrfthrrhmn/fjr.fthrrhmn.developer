@@ -1,3 +1,5 @@
+"use client"
+
 import { IconType } from "react-icons"
 
 import { FolderGit2Icon, GitForkIcon } from "lucide-react"

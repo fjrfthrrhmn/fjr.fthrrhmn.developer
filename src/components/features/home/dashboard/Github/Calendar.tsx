@@ -20,8 +20,8 @@ export const Calendar = ({ calendar }: CalendarProps) => {
 	const transformed = transformContributions(contributionCalendar)
 
 	return (
-		<CardStyle className="lg:col-span-7">
-			<ScrollArea className="pb-4">
+		<CardStyle className="w-full min-h-44 max-h-60 lg:col-span-7">
+			<ScrollArea className="pb-4 flex justify-center items-center">
 				<GitHubCalendar
 					username="dummy"
 					{...calendarConfig}

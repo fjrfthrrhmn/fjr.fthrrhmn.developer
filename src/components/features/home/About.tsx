@@ -7,7 +7,7 @@ import { toast } from "sonner"
 
 import { Container, RainbowButton, Section, Title } from "@/ui"
 
-import { ExperiencesContent, ProfileContent, SkillsContent } from "./about/"
+import { ExperiencesContent, ProfileContent } from "./about/"
 
 const About = () => {
 	const t = useTranslations("AboutSection")
@@ -40,7 +40,7 @@ const About = () => {
 					<ExperiencesContent />
 
 					{/* * Content Skills and Tools */}
-					<SkillsContent />
+					{/* <SkillsContent /> */}
 				</div>
 			</Container>
 		</Section>

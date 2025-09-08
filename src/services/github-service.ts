@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { API_ENDPOINTS, API_KEYS } from "@/constants/config/api.config"
+import { API_ENDPOINTS, API_KEYS } from "@/constants"
 
 import { GithubResponseType } from "./"
 
