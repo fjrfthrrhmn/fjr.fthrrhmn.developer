@@ -1,9 +1,15 @@
 import { useWakatimeProfile } from "@/hooks"
 
+import { ProfileContent } from "."
+
 export const Wakatime = () => {
-	const { response } = useWakatimeProfile()
+	const { response, isLoading, isPending } = useWakatimeProfile()
 
-	console.log(response)
+	if (isLoading || isPending) return "Loading..."
 
-	return <div>WakaTime</div>
+	return (
+		<>
+			<ProfileContent profile={response!.user} />
+		</>
+	)
 }

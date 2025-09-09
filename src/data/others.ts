@@ -45,6 +45,6 @@ export const ToggleItemsData = [
 	{
 		name: "WakaTime",
 		icon: TimerIcon,
-		disabled: true
+		disabled: false
 	}
 ] as const

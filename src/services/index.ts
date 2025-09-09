@@ -1,10 +1,13 @@
 export { githubService } from "./github-service"
 export {
 	type GithubResponseType,
-	type ContributionCalendar,
-	type ContributionsType,
-	type UserType
+	type ContributionCalendar as GithubContributionsCalendarType,
+	type ContributionsType as GithubContributionsType,
+	type UserType as GithubUserType
 } from "./github-types"
 
 export { wakatimeService } from "./wakatime-service"
-export { type WakatimeResponseType } from "./wakatime-types"
+export {
+	type WakatimeResponseType,
+	type UserType as WakatimeUserType
+} from "./wakatime-types"
