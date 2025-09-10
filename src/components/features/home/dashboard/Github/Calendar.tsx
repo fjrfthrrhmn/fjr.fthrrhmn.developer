@@ -7,14 +7,18 @@ import GitHubCalendar, {
 	Props as ConfigCalendarProps
 } from "react-github-calendar"
 
-import { ContributionCalendar } from "@/services"
+import { GithubContributionsCalendarType } from "@/services"
 
 import { ScrollArea, ScrollBar } from "@/ui"
 import { CardStyle } from "@/widgets"
 
 import { DashboardUtils } from "../../"
 
-export const Calendar = ({ calendar }: { calendar: ContributionCalendar }) => {
+export const Calendar = ({
+	calendar
+}: {
+	calendar: GithubContributionsCalendarType
+}) => {
 	const contributionCalendar = calendar.weeks || []
 	const transformed =
 		DashboardUtils.transformContributions(contributionCalendar)

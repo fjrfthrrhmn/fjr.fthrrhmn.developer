@@ -1,5 +1,5 @@
-// export { Stats as StatsContent } from "./Stats"
 // export { Languages as LanguagesContent } from "./Languages"
 // export { Categories as CategoriesContent } from "./Categories"
+export { Stats as StatsContent } from "./Stats"
 export { Profile as ProfileContent } from "./Profile"
 export { Wakatime as WakatimeContent } from "./Wakatime"

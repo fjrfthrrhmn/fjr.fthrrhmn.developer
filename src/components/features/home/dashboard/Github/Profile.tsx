@@ -1,20 +1,19 @@
-import { MdVerified } from "react-icons/md"
 import Image from "next/image"
 import Link from "next/link"
 
-import { UserType } from "@/services"
+import { GithubUserType } from "@/services"
 
 import { Avatar, AvatarFallback, Typography } from "@/ui"
 import { CardStyle } from "@/widgets"
 
-type ProfileProps = {
+export const Profile = ({
+	profile
+}: {
 	profile: Pick<
-		UserType,
+		GithubUserType,
 		"avatarUrl" | "name" | "url" | "bio" | "login" | "location"
 	>
-}
-
-export const Profile = ({ profile }: ProfileProps) => {
+}) => {
 	const { avatarUrl, name, url, bio, location } = profile
 	const COLOR = {
 		TEXT: "text-[#34d399]",
@@ -22,7 +21,7 @@ export const Profile = ({ profile }: ProfileProps) => {
 	}
 
 	return (
-		<CardStyle className="lg:col-span-4">
+		<CardStyle className="lg:col-span-4 h-max lg:max-h-36">
 			<div className="flex flex-row items-center gap-4">
 				<Avatar className="size-20 border-4 shadow-2xl">
 					<Image
@@ -39,17 +38,14 @@ export const Profile = ({ profile }: ProfileProps) => {
 					<Typography.Text variant="xs/normal" className="font-mono">
 						{location}
 					</Typography.Text>
-					<div className="flex gap-2 items-center">
-						<Link href={url} target="_blank" rel="noopener noreferrer">
-							<Typography.Title
-								variant="4/bold"
-								className={`capitalize decoration-2 underline underline-offset-8 ${COLOR.UNDERLINE}`}
-							>
-								{name}
-							</Typography.Title>
-						</Link>
-						<MdVerified className="text-blue-400" size={22} />
-					</div>
+					<Link href={url} target="_blank" rel="noopener noreferrer">
+						<Typography.Title
+							variant="4/bold"
+							className={`capitalize decoration-2 underline underline-offset-8 ${COLOR.UNDERLINE}`}
+						>
+							{name}
+						</Typography.Title>
+					</Link>
 					<Typography.Text variant="xs/normal">{bio}</Typography.Text>
 				</div>
 			</div>

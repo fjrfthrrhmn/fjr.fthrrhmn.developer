@@ -5,7 +5,7 @@ import Link from "next/link"
 
 import { useGithubProfile } from "@/hooks"
 
-import { ErrorState, Typography } from "@/components/ui"
+import { ErrorState, Typography } from "@/ui"
 import { CardStyle } from "@/widgets"
 import { DashboardSkeleton } from "@/skeletons"
 

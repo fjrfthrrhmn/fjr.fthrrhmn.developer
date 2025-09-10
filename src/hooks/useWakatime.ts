@@ -10,11 +10,12 @@ import { wakatimeService } from "@/services"
 export const useWakatimeProfile = () => {
 	const { data: response, ...rest } = useQuery({
 		queryKey: ["wakatime-profile"],
-		queryFn: async () => (await wakatimeService.getStats()).data
+		queryFn: async () => await wakatimeService.getStats()
 	})
 
 	return {
 		response: response,
+		data: response?.data,
 		...rest
 	}
 }
