@@ -55,12 +55,12 @@ export const WAKATIME_STATS_MAP = (
 			icon: FolderGit2Icon
 		},
 		{
-			value: `${value.stats.languages?.[0]?.name} (${value.stats.languages?.[0]?.text})`,
+			value: value.stats.languages?.[0]?.name ?? "-",
 			label: "Top Language",
 			icon: FileCode2Icon
 		},
 		{
-			value: `${value.stats.projects?.[0]?.name} (${value.stats.projects?.[0]?.text})`,
+			value: value.stats.projects?.[0]?.name ?? "-",
 			label: "Top Project",
 			icon: BriefcaseIcon
 		}

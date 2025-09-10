@@ -17,9 +17,9 @@ export const Profile = ({ profile }: { profile: WakatimeUserType }) => {
 	}
 
 	return (
-		<CardStyle className="col-span-5 h-max">
+		<CardStyle className="col-span-9 lg:col-span-5 h-max">
 			<div className="w-full flex flex-col sm:items-center sm:justify-between md:flex-row gap-4">
-				<div className="w-full flex flex-col sm:flex-row sm:items-center gap-4">
+				<div className="w-full flex flex-row sm:items-center gap-4">
 					<Avatar className="size-14">
 						<Image
 							src={photo}
@@ -44,9 +44,9 @@ export const Profile = ({ profile }: { profile: WakatimeUserType }) => {
 					</div>
 				</div>
 
-				<div className="flex flex-col sm:items-end w-full">
+				<div className="flex sm:flex-col flex-row justify-between sm:items-end w-full">
 					<Typography.Text variant="xs/light" className="text-foreground">
-						January 2023
+						Jan 2023
 					</Typography.Text>
 					<Typography.Text variant="xs/normal" className="text-foreground">
 						{city.short_title}
