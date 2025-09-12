@@ -17,6 +17,7 @@ export const Wakatime = () => {
 	return (
 		<>
 			<ProfileContent profile={data.user} />
+			{/* <TimeWakatime start={data.stats.start} end={data.stats.end} /> */}
 			<StatsContent data={data} />
 			<ChartWakatime
 				languages={data.stats.languages}

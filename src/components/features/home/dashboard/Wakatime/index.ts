@@ -1,4 +1,4 @@
-// export { Languages as LanguagesContent } from "./Languages"
+export { Time as TimeWakatime } from "./Time"
 export { Chart as ChartWakatime } from "./Chart"
 export { Stats as StatsContent } from "./Stats"
 export { Profile as ProfileContent } from "./Profile"

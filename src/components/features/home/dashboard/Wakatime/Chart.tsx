@@ -45,8 +45,8 @@ const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 
 	return (
 		<CardStyle className="lg:col-span-4">
-			<div className="flex flex-col gap-2">
-				<Typography.Title variant="3/bold">
+			<div className="h-[100px] flex flex-col gap-2">
+				<Typography.Title variant="5/bold">
 					{t("categories.title")}
 				</Typography.Title>
 				<Typography.Text variant="xs/normal">
@@ -88,8 +88,8 @@ const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 
 	return (
 		<CardStyle className="lg:col-span-5">
-			<div className="flex flex-col gap-2">
-				<Typography.Title variant="3/bold">
+			<div className="h-[100px] flex flex-col gap-2">
+				<Typography.Title variant="5/bold">
 					{t("languages.title")}
 				</Typography.Title>
 				<Typography.Text variant="xs/normal">

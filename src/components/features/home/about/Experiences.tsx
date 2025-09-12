@@ -70,7 +70,7 @@ const ExperienceItem = ({ ...props }: ExperienceItemProps) => {
 						"underline underline-offset-8 decoration-2 decoration-blue-500"
 					}
 				>
-					<Typography.Title variant="6/semibold">{company}</Typography.Title>
+					<Typography.Text variant="sm/bold">{company}</Typography.Text>
 				</LinkComponent>
 				<Typography.Text variant="xs/normal">{title}</Typography.Text>
 			</div>
