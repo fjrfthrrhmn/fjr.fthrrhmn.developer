@@ -3,7 +3,7 @@ import { useWakatimeProfile } from "@/hooks"
 import { DashboardSkeleton } from "@/components/skeletons"
 import { ErrorState } from "@/components/ui"
 
-import { ProfileContent, StatsContent } from "."
+import { ChartWakatime, ProfileContent, StatsContent } from "."
 
 export const Wakatime = () => {
 	const { data, isLoading, isPending, isFetching, isError, error } =
@@ -16,8 +16,12 @@ export const Wakatime = () => {
 
 	return (
 		<>
-			<ProfileContent profile={data!.user} />
-			<StatsContent data={data!} />
+			<ProfileContent profile={data.user} />
+			<StatsContent data={data} />
+			<ChartWakatime
+				languages={data.stats.languages}
+				categories={data.stats.categories}
+			/>
 		</>
 	)
 }

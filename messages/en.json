@@ -30,7 +30,15 @@
 
 	"DashboardSection": {
 		"title": "Statistics",
-		"description": "Check out my coding activity, contributions, and learning progress across different platforms."
+		"description": "Check out my coding activity, contributions, and learning progress across different platforms.",
+		"languages": {
+			"title": "Top Languages",
+			"description": "Your most used programming languages this week based on Wakatime tracking."
+		},
+		"categories": {
+			"title": "Activity Categories",
+			"description": "Breakdown of your daily work by category."
+		}
 	},
 
 	"CTA": {

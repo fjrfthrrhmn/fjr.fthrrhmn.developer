@@ -4,16 +4,16 @@ import { useMemo } from "react"
 
 import { FlameIcon } from "lucide-react"
 
-import { ContributionCalendar } from "@/services"
+import { GithubContributionsCalendarType } from "@/services"
 
-import { Typography } from "@/components/ui"
-import { CardStyle } from "@/components/widgets"
+import { Typography } from "@/ui"
+import { CardStyle } from "@/widgets"
 
-type StreakProps = {
-	weeks: ContributionCalendar["weeks"]
-}
-
-export const Streak = ({ weeks }: StreakProps) => {
+export const Streak = ({
+	weeks
+}: {
+	weeks: GithubContributionsCalendarType["weeks"]
+}) => {
 	const { maxStreak } = useMemo(() => calculateStreaks(weeks), [weeks])
 
 	return (
@@ -40,7 +40,7 @@ const getFireColor = (streak: number) => {
 }
 
 const calculateStreaks = (
-	weeks: ContributionCalendar["weeks"]
+	weeks: GithubContributionsCalendarType["weeks"]
 ): { currentStreak: number; maxStreak: number } => {
 	const days = weeks.flatMap((week) => week.contributionDays)
 	let maxStreak = 0

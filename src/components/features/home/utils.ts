@@ -2,7 +2,7 @@ import { Activity as ActivityCalendarProps } from "react-github-calendar"
 
 import { Briefcase, GraduationCap, Sparkles, Trophy } from "lucide-react"
 
-import { ContributionCalendar } from "@/services"
+import { GithubContributionsCalendarType } from "@/services"
 
 // About
 const getIconExperiences = (type: "work" | "academic" | "competition") => {
@@ -37,7 +37,9 @@ export const AboutUtils = {
 }
 
 // Dashboard
-const transformContributions = (weeks: ContributionCalendar["weeks"]) => {
+const transformContributions = (
+	weeks: GithubContributionsCalendarType["weeks"]
+) => {
 	const allDays = weeks.flatMap((week) => week.contributionDays)
 	const maxCount = Math.max(...allDays.map((d) => d.contributionCount), 1)
 

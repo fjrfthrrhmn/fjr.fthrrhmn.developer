@@ -1,6 +1,7 @@
 export { Button } from "./button"
 export { Skeleton } from "./skeleton"
 export { Input } from "./input"
+export * from "./chart"
 export { Label } from "./label"
 export { Toaster } from "./sonner"
 export { Container, Section } from "./main"
