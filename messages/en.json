@@ -41,6 +41,12 @@
 		}
 	},
 
+	"ProjectsSection": {
+		"title": "Projects",
+		"description": "I enjoy building products that solve user problems with thoughtful and engaging design.",
+		"buttonAll": "View All Projects"
+	},
+
 	"CTA": {
 		"title": "Let’s get",
 		"highlight": "in touch",

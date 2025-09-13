@@ -1,7 +1,8 @@
 import {
 	AboutSection,
 	DashboardSection,
-	HeroSection
+	HeroSection,
+	ProjectSection
 } from "@/components/features/home"
 import { DotPattern } from "@/ui"
 import { PhotosMarquee } from "@/widgets"
@@ -21,6 +22,7 @@ export default function HomePage() {
 			<PhotosMarquee />
 			<AboutSection />
 			<DashboardSection />
+			<ProjectSection />
 		</main>
 	)
 }

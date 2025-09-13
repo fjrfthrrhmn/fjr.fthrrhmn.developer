@@ -4,28 +4,42 @@ import axios from "axios"
 
 import { API_ENDPOINTS, API_KEYS } from "@/constants"
 
+const endpoints = {
+	stats: "stats/last_7_days",
+	allTime: "all_time_since_today",
+	user: ""
+}
+/**
+ * Handles GET requests by fetching Wakatime user statistics from multiple endpoints.
+ *
+ * returns a JSON response with the collected stats.
+ * Returns a 401 error if the API key is missing, or a 500 error for server failures.
+ *
+ * @returns {Promise<NextResponse>} JSON response containing Wakatime stats or error message.
+ */
 export async function GET() {
-	try {
-		const endpoints = {
-			stats: "stats/last_7_days",
-			allTime: "all_time_since_today",
-			user: ""
-		}
+	if (!API_KEYS.wakatime) {
+		return NextResponse.json(
+			{ message: "Wakatime API key is missing or invalid." },
+			{ status: 401 }
+		)
+	}
 
-		// Make requests to Wakatime API
-		const responses = await axios.all(
-			Object.entries(endpoints).map(([key, ep]) =>
-				axios
-					.get(`${API_ENDPOINTS.wakatime}/users/current/${ep}`, {
+	try {
+		const responses = await Promise.all(
+			Object.entries(endpoints).map(async ([key, ep]) => {
+				const res = await axios.get(
+					`${API_ENDPOINTS.wakatime}/users/current/${ep}`,
+					{
 						headers: {
 							Authorization: `Basic ${API_KEYS.wakatime}`
 						}
-					})
-					.then((res) => [key, res.data.data])
-			)
+					}
+				)
+				return [key, res.data.data]
+			})
 		)
 
-		// Transform responses into a single object
 		const data = Object.fromEntries(responses)
 
 		const RESPONSE = { message: "Wakatime Stats", data }
