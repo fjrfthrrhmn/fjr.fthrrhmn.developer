@@ -15,3 +15,11 @@ export {
 	type ProjectType as WakatimeProjectType,
 	type LanguageType as WakatimeLanguageType
 } from "./wakatime-types"
+
+export { lanyardService } from "./lanyard-service"
+export {
+	type LanyardActivityType,
+	type LanyardDiscordUserType,
+	type LanyardPresenceType,
+	type LanyardResponseType
+} from "./lanyard-types"
