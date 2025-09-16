@@ -31,9 +31,21 @@ const getColorExperiences = (type: "work" | "academic" | "competition") => {
 	}
 }
 
+const getColorStatus = (type: "online" | "idle" | "dnd" | "offline") => {
+	const map: Record<typeof type, string> = {
+		online: "bg-green-500 shadow-green",
+		idle: "bg-yellow-500 shadow-yellow",
+		dnd: "bg-red-500 shadow-red",
+		offline: "bg-gray-400 shadow-gray"
+	}
+
+	return map[type]
+}
+
 export const AboutUtils = {
 	getIconExperiences,
-	getColorExperiences
+	getColorExperiences,
+	getColorStatus
 }
 
 // Dashboard
