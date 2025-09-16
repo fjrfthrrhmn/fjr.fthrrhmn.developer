@@ -24,8 +24,8 @@ export const LanyardProfile = ({ userId, ...props }: LanyardProfileProps) => {
 	const URL_PROFILE = `https://discord.com/users/${userId}`
 
 	return (
-		<CardStyle>
-			<div className="flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-evenly">
+		<CardStyle className="mt-6">
+			<div className="flex gap-4 flex-wrap">
 				<Avatar className="size-16">
 					<Image
 						src={URL_IMAGE}
@@ -50,7 +50,7 @@ export const LanyardProfile = ({ userId, ...props }: LanyardProfileProps) => {
 					</div>
 				</div>
 
-				<Button asChild>
+				<Button asChild className="w-full">
 					<Link href={URL_PROFILE} rel="noopener noreferrer" target="_blank">
 						Send Message
 						<LucideSend />

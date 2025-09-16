@@ -16,7 +16,7 @@ import {
 import { LanyardActivities, LanyardProfile } from "../"
 
 export const Lanyard = () => {
-	const userId = "794908435908788231"
+	const userId = "794908435908788234"
 	const { data, isError, error, isLoading, isPending } =
 		useLanyardPresence(userId)
 
@@ -32,7 +32,7 @@ export const Lanyard = () => {
 				</RainbowButton>
 			</DrawerTrigger>
 
-			<DrawerContent className="fixed inset-0 h-dvh z-[9999] pointer-events-auto">
+			<DrawerContent className="h-dvh">
 				<div
 					className={`w-full ${isError ? "sm:w-3xl" : "sm:w-lg"} mx-auto px-4`}
 				>
@@ -50,7 +50,7 @@ export const Lanyard = () => {
 					) : (
 						<div className="flex flex-col gap-8">
 							<LanyardProfile data={data} userId={userId} />
-							<LanyardActivities />
+							<LanyardActivities data={data} />
 						</div>
 					)}
 				</div>
