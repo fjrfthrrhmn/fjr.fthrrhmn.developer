@@ -9,6 +9,7 @@ import {
 	DrawerTrigger,
 	ErrorState,
 	RainbowButton,
+	ScrollArea,
 	Skeleton,
 	Title
 } from "@/ui"
@@ -48,10 +49,12 @@ export const Lanyard = () => {
 							errorMessage={error?.message ?? "Failed to load presence data."}
 						/>
 					) : (
-						<div className="flex flex-col gap-8">
-							<LanyardProfile data={data} userId={userId} />
-							<LanyardActivities data={data} />
-						</div>
+						<ScrollArea className="w-full h-[500px] max-h-[600px]">
+							<div className="flex flex-col gap-8">
+								<LanyardProfile data={data} userId={userId} />
+								<LanyardActivities data={data} />
+							</div>
+						</ScrollArea>
 					)}
 				</div>
 			</DrawerContent>

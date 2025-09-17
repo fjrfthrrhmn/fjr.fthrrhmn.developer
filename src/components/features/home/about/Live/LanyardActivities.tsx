@@ -22,11 +22,10 @@ export const LanyardActivities = ({ data }: { data: LanyardPresenceType }) => {
 			/>
 
 			<div className="flex flex-col gap-6 mt-6">
-				{/*  */}
 				{isEmpty && (
-					<div className="text-center py-12">
-						<Typography.Title variant="6/bold">
-							No activities right now ✨
+					<div className="h-max py-20 border-4 border-zinc-700 border-dashed rounded-3xl w-full flex flex-col justify-center items-center text-center">
+						<Typography.Title variant="6/normal">
+							No activities right now
 						</Typography.Title>
 						<Typography.Text variant="xs/normal">
 							Just chilling, nothing to show.
