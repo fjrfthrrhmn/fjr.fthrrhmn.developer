@@ -12,7 +12,7 @@ import { Providers } from "@/providers"
 
 import "./../globals.css"
 
-import { Navigation } from "@/components/shared"
+import { Footer, Navigation } from "@/components/shared"
 
 const fontSans = Roboto({
 	variable: "--font-sans",
@@ -116,7 +116,10 @@ export default async function RootLayout({
 				<NextIntlClientProvider locale={locale}>
 					<Providers>
 						<Navigation />
-						<main className="flex-1">{children}</main>
+						<main className="rounded-b-4xl bg-background pb-20">
+							{children}
+						</main>
+						<Footer />
 					</Providers>
 				</NextIntlClientProvider>
 			</body>

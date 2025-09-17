@@ -220,7 +220,7 @@
 	}
 
 	body {
-		@apply bg-background font-sans text-foreground;
+		@apply bg-zinc-950 font-sans text-foreground;
 	}
 
 	[role="button"],
@@ -237,14 +237,5 @@
 
 	::selection {
 		@apply bg-teal-300 text-background;
-	}
-}
-
-@layer base {
-	* {
-		@apply border-border outline-ring/50;
-	}
-	body {
-		@apply bg-background text-foreground;
 	}
 }

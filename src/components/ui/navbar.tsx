@@ -9,6 +9,8 @@ import { BotIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { toast } from "sonner"
 
+import { cn } from "@/lib/utils"
+
 import { RainbowButton, Typography } from "@/ui"
 
 import { NavItemsData } from "@/data"
@@ -37,13 +39,18 @@ const NavMenuDesktop = () => {
 			<div className="border px-6 rounded-2xl py-2.5 flex items-center gap-6 bg-zinc-800/60 shadow-2xl backdrop-blur w-max">
 				{NavItemsData.map((item) => {
 					return (
-						<div key={item.name}>
-							<Link href={item.href}>
-								<Typography.Text variant="xs/bold" className="text-foreground">
-									{item.name}
-								</Typography.Text>
-							</Link>
-						</div>
+						<Link key={item.name} href={item.href}>
+							<Typography.Text
+								variant="xs/normal"
+								className={cn(
+									"relative inline-block",
+									"after:content-[''] after:block after:h-[2px] after:bg-sky-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left",
+									"after:transition-transform after:duration-500"
+								)}
+							>
+								{item.name}
+							</Typography.Text>
+						</Link>
 					)
 				})}
 			</div>
